@@ -14,7 +14,7 @@ if(APPLE)
 elseif(UNIX)
     set(conan_args -s compiler=gcc -s compiler.version=10 -s compiler.libcxx=libstdc++11)
 elseif(WIN32)
-    set(conan_args -s arch=x86 -s compiler.version=16 -s compiler.runtime=MT)
+    set(conan_args -s arch=x86 -s compiler.version=16 -o qt:shared=False) # -s compiler.runtime=MT)
 endif()
 
 execute_process(
